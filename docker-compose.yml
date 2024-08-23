@@ -24,7 +24,7 @@ services:
   angular-app:
     build: ./angular-app
     depends_on:
-      - java-app
+      - java_app
 
   nginx:
     image: nginx:alpine

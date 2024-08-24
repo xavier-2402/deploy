@@ -9,7 +9,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "432:5432"
+      - "5432:5432"
 
   java-app:
     image: openjdk:17-jdk-alpine

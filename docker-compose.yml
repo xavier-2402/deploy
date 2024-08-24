@@ -12,14 +12,12 @@ services:
       - "9898:5432"
 
   java-app:
-    image: openjdk:17-jdk-alpine
-    volumes:
-      - ./java_app/app.jar:/app.jar
+    build:
+      context: ./java_app
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/invoice_system
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
-    entrypoint: ["java", "-jar", "/app.jar"]
     ports:
       - "8080:8080"
     depends_on:
